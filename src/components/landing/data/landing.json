@@ -1,0 +1,233 @@
+{
+  "heroSection": [
+    {
+      "Announcement": "Coming Soon!",
+      "title": "The All-in-One Study Platform for BSc I.T. Students.",
+      "subtitle": "Notes, PYQs, study resources, and AI tools — everything you need for your BSc I.T. journey.",
+      "description": "Everything BSc I.T. students need for notes, PYQs, syllabus, and exam preparation in one place. Study, revise, and prepare for your exams, even the night before.",
+      "ctaText": "Wait Fellows!",
+      "ctaLink": "/signin",
+      "image": [
+        {
+          "src": "/assets/book-pen.svg",
+          "alt": "Book and Pen Illustration"
+        },
+        {
+          "src": "/assets/studying.svg",
+          "alt": "Studying Illustration"
+        }
+      ]
+    }
+  ],
+  "FeaturesSection": [
+    {
+      "title": "Everything You Need to Study",
+      "subtitle": "Notes, PYQs & AI Study Tools",
+      "description": "Get all your BSc I.T. study resources and AI-powered tools in one simple platform.",
+      "cards": [
+        {
+          "icon": "squares",
+          "title": "Notes & PYQs",
+          "description": "Access organized notes and previous year question papers for exam preparation.",
+          "id": 1
+        },
+        {
+          "icon": "🧠",
+          "title": "Quiz & Flashcards",
+          "description": "Practice with quizzes and revise important topics using flashcards.",
+          "id": 2
+        },
+        {
+          "icon": "✨",
+          "title": "AI Study Tools",
+          "description": "Use AI chat, summaries, and smart study tools to understand and revise faster with Google NotebookLM Video Chapters-wise.",
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "pricingSection": [
+    {
+      "title": "Affordable Plans for Every Student",
+      "subtitle": "Free, Pro & Max Plans",
+      "description": "Start for free or unlock powerful AI study tools and premium features for your BSc I.T. preparation.",
+      "plans": [
+        {
+          "name": "Free",
+          "description": "Get started with essential study resources.",
+          "badge": "null",
+          "price": "₹0",
+          "activeCard": true,
+          "features": [
+            "Access notes and PYQs",
+            "Community forums",
+            "Basic AI chat"
+          ],
+          "buttonVariant": "outline",
+          "ctaText": "Get Started",
+          "ctaLink": "/signin",
+          "id": 1
+        },
+        {
+          "name": "Pro",
+          "description": "Study smarter with powerful AI revision tools.",
+          "badge": "Most Popular",
+          "price": "₹99.00",
+          "buttonVariant": "default",
+          "activeCard": true,
+          "features": [
+            "Access notes and PYQs",
+            "AI Gemini chat",
+            "Topic-wise summaries",
+            "AI quiz generation",
+            "AI flashcard generation"
+          ],
+          "ctaText": "Upgrade Now",
+          "ctaLink": "/pricing",
+          "id": 2
+        },
+        {
+          "name": "Max",
+          "description": "The ultimate AI-powered study experience.",
+          "badge": "null",
+          "price": "₹299.00",
+          "activeCard": true,
+          "buttonVariant": "outline",
+          "features": [
+            "Everything in Pro",
+            "Google NotebookLM video",
+            "Advanced Gemini AI chat",
+            "Blue tick verified account",
+            "Early access to new features"
+          ],
+          "ctaText": "Go Premium",
+          "ctaLink": "/pricing",
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "faqsSection": [
+    {
+      "title": "Frequently Asked Questions",
+      "description": "Everything you need to know about Fellow Notes, BSc I.T. study resources, AI tools, and plans.",
+      "faqs": [
+        {
+          "question": "What is Fellow Notes?",
+          "answer": "Fellow Notes is a study platform made specifically for BSc I.T. students, offering notes, PYQs, quizzes, flashcards, summaries, and AI study tools in one place.",
+          "id": 1
+        },
+        {
+          "question": "What AI tools are available?",
+          "answer": "You can use AI chat with Gemini, generate topic-wise summaries, create quizzes and flashcards, and use AI tools to understand and revise your subjects faster.",
+          "id": 2
+        },
+        {
+          "question": "What is included in the Pro plan?",
+          "answer": "The Pro plan includes notes and PYQs along with Gemini AI chat, topic-wise summaries, AI-generated quizzes, and AI-generated flashcards.",
+          "id": 3
+        },
+        {
+          "question": "What is included in the Max plan?",
+          "answer": "The Max plan includes all Pro features plus Google NotebookLM video study support, advanced Gemini AI chat, a blue tick verified account, and early access to new features.",
+          "id": 4
+        },
+        {
+          "question": "Can I study for exams the night before?",
+          "answer": "Yes. Fellow Notes brings notes, PYQs, summaries, quizzes, flashcards, and AI tools together so you can quickly revise and prepare, even the night before an exam.",
+          "id": 5
+        }
+      ]
+    }
+  ],
+  "testimontials": [
+    {
+      "id": 1,
+      "name": "Raj Chawan",
+      "insta_handle": "lowly_csum",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/lowly_csum.jpeg",
+      "review": "/assets/1_review.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Narendar Choudhary",
+      "insta_handle": "_.narendra_17._",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/_.narendra_17._.jpg",
+      "review": "/assets/4_review.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Aditya Gupta",
+      "insta_handle": "#",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/aditya_gupta_2007_01.jpg",
+      "review": "/assets/5_review.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Satvika Rane",
+      "insta_handle": "hii.satvika.here_",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/hii.satvika.here_.jpg",
+      "review": "/assets/7_review.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Mandar Walve",
+      "insta_handle": "mandar.notfound",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/mandar.notfound.jpg",
+      "review": "/assets/8_review.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Vedant Aavad",
+      "insta_handle": "mr_vedu_06",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/mr_vedu_06.jpg",
+      "review": "/assets/3_review.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Shubham Vishwakarma",
+      "insta_handle": "___shubh5",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/___shubh5.jpg",
+      "review": "/assets/6_review.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Nehar Betkar",
+      "insta_handle": "Iblame.nhr",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/Iblame.nhr.jpeg",
+      "review": "/assets/2_review.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Sonu Yadav",
+      "insta_handle": "sonu.2k3",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/user.jpg",
+      "review": "/assets/9_review.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "Pallavi  Lokare",
+      "insta_handle": "pallavii.__.23",
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/pallavii.__.23.jpeg",
+      "review": "/assets/10_review.jpeg"
+    },
+    {
+      "id": 11,
+      "name": "Pradnya Tambe",
+      "insta_handle": null,
+      "role": "BSc I.T. Student",
+      "image": "https://pub-b289a32534284964b865f90fc9d138d6.r2.dev/review/user.jpg",
+      "review": "/assets/11_review.jpeg"
+    }
+  ]
+}

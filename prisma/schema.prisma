@@ -1,0 +1,266 @@
+generator client {
+    provider = "prisma-client"
+    output   = "../generated/prisma"
+}
+
+datasource db {
+    provider = "postgresql"
+}
+
+enum Role {
+    USER
+    ADMIN
+}
+
+enum Plan {
+    FREE
+    PRO
+    MAX
+}
+
+enum PostType {
+    NOTES
+    PYQS
+    VIDEO
+    QUIZ
+    FLASHCARD
+}
+
+enum PaymentStatus {
+    PENDING
+    COMPLETED
+    FAILED
+    REFUNDED
+}
+
+enum SubscriptionStatus {
+    ACTIVE
+    CANCELED
+    EXPIRED
+    PAST_DUE
+}
+
+enum ReferralStatus {
+    PENDING
+    COMPLETED
+    CANCELED
+}
+
+enum College {
+    VJTI
+    ICT_MUMBAI
+    SPIT
+    DJ_SANGHVI
+    THADOMAL
+    NMIMS
+    MITHIBAI
+    HR_COLLEGE
+    KC_COLLEGE
+    JAI_HIND
+    SYDENHAM
+    ST_XAVIERS
+    WILSON
+    RUPAREL
+    SIES
+    VIVEKANAND
+    FR_ANGEL
+    VESIT
+    TCET
+    TSEC
+    KJ_SOMAIYA
+    BHAVANS
+    FATHER_ANGEL
+    SABOO_SIDDik
+    DON_BOSCO
+    TERNA
+    ATHARVA
+    RAIT
+    PILLAI
+    BHARATI_VIDYAPEETH
+    DATTA_MEGHE
+    LOKMANYA
+    ST_FRANCIS
+    VIVA
+    ANNASAHEB_VARTAK
+    MGM
+    SOMAIYA_VIDYAVIHAR
+    RIZVI
+    NATIONAL_COLLEGE
+    ELPHINSTONE
+    GOVERNMENT_LAW
+    GLS
+    JBIMS
+    SP_JAIN
+    NL_DALMIA
+    TISS
+    IIT_BOMBAY
+    IITM_JANAKPURI
+    AMITY
+    MANIPAL
+    SYMBIOSIS
+    OTHER
+}
+
+enum YearOfStudy {
+    ONE
+    TWO
+    THREE
+    FOUR
+    FIVE
+    SIX
+}
+
+model User {
+    id            String  @id @default(uuid())
+    name          String
+    email         String  @unique
+    username      String  @unique
+    emailVerified Boolean @default(false)
+    image         String?
+
+    role Role @default(USER)
+    plan Plan @default(FREE)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    sessions Session[]
+    accounts Account[]
+
+    posts    Post[]
+    comments Comment[]
+
+    payments      Payment[]
+    subscriptions Subscription[]
+
+    referralCode  ReferralCode?
+    referralsSent Referral[]    @relation("ReferralSender")
+    referralsUsed Referral[]    @relation("ReferralReceiver")
+
+    studentProfile StudentProfile?
+    postBookmarks  PostBookmark[]
+
+    @@map("user")
+}
+
+model StudentProfile {
+    id String @id @default(uuid())
+
+    userId String @unique
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    course       String?
+    university   String?
+    college      College?
+    academicYear String?
+    year         YearOfStudy?
+    semester     Int?
+
+    bio String?
+
+    instagram String?
+    linkedin  String?
+    github    String?
+    twitter   String?
+    website   String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([college])
+    @@index([year])
+    @@map("student_profile")
+}
+
+model Session {
+    id        String   @id @default(uuid())
+    expiresAt DateTime
+    token     String   @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    ipAddress String?
+    userAgent String?
+
+    userId String
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId])
+    @@map("session")
+}
+
+model Account {
+    id         String @id @default(uuid())
+    issuer     String
+    accountId  String
+    providerId String
+
+    userId String
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    accessToken           String?
+    refreshToken          String?
+    idToken               String?
+    accessTokenExpiresAt  DateTime?
+    refreshTokenExpiresAt DateTime?
+
+    scope    String?
+    password String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([issuer, accountId])
+    @@index([userId])
+    @@map("account")
+}
+
+model Verification {
+    id         String   @id @default(uuid())
+    identifier String
+    value      String
+    expiresAt  DateTime
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([identifier])
+    @@map("verification")
+}
+
+model Post {
+    id          String   @id @default(uuid())
+    title       String
+    description String?
+    url         String
+    authorId    String
+    author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+}
+
+model Document {
+    id        String          @id @default(uuid())
+    filename  String
+    title     String?
+    metadata  Json?
+    chunks    DocumentChunk[]
+    createdAt DateTime        @default(now())
+    updatedAt DateTime        @updatedAt
+
+    @@map("documents")
+}
+
+model DocumentChunk {
+    id         String                      @id @default(uuid())
+    documentId String
+    chunkIndex Int
+    content    String
+    embedding  Unsupported("vector(768)")?
+    metadata   Json?
+    document   Document                    @relation(fields: [documentId], references: [id], onDelete: Cascade)
+    createdAt  DateTime                    @default(now())
+
+    @@index([documentId])
+    @@map("document_chunks")
+}
