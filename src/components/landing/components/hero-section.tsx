@@ -43,7 +43,7 @@ const AVATAR_LIST = [
   },
 ];
 
-const LAUNCH_DATE = "2026-10-01T00:00:00+05:30";
+const LAUNCH_DATE = "2026-10-03T00:00:00+05:30";
 
 export function HeroSection() {
   return (
@@ -70,7 +70,7 @@ export function HeroSection() {
           <div className="flex flex-col items-center gap-3">
             <Badge variant="secondary" size="sm" className="mt-8 gap-1.5">
               <SparklesIcon className="size-3.5" />
-              Launching October 1, 2026
+              Launching October 3, 2026
             </Badge>
             <CountdownTimer target={LAUNCH_DATE} />
           </div>
